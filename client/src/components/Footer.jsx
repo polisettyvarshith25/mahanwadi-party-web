@@ -17,7 +17,7 @@ const Footer = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/subscribe', { email });
+      const response = await axios.post('/api/subscribe', { email });
       setStatus('success');
       setMessage(response.data.message || 'Successfully subscribed!');
       setEmail('');

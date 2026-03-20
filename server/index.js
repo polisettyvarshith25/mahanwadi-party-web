@@ -2,7 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const db = require('./db');
 const nodemailer = require('nodemailer');
+const path = require('path');
 require('dotenv').config();
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -154,6 +156,14 @@ app.post('/api/admin/news', (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+// Serve static production React files
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Catch-all route to serve React's index.html for SPA routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
 app.listen(PORT, () => {

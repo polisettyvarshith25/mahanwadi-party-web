@@ -9,7 +9,7 @@ const NewsSection = () => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/news')
+    axios.get('/api/news')
       .then(res => setNews(res.data))
       .catch(err => console.error(err));
   }, []);

@@ -16,7 +16,7 @@ const VolunteerForm = () => {
     e.preventDefault();
     setStatus('loading');
     try {
-      await axios.post('http://localhost:5000/api/volunteers', formData);
+      await axios.post('/api/volunteers', formData);
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', address: '' });
       setTimeout(() => setStatus('idle'), 5000);

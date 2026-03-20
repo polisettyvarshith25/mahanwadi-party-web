@@ -11,7 +11,7 @@ const LeaderSection = () => {
   const [selectedLeader, setSelectedLeader] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/leaders')
+    axios.get('/api/leaders')
       .then(res => setLeaders(res.data))
       .catch(err => console.error(err));
   }, []);

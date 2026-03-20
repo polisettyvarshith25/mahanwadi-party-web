@@ -1,0 +1,9 @@
+{
+  "name": "mahanwadi-party-web",
+  "version": "1.0.0",
+  "description": "Full-stack React and Node application",
+  "scripts": {
+    "build": "npm install --prefix client && npm run build --prefix client && npm install --prefix server",
+    "start": "npm start --prefix server"
+  }
+}
