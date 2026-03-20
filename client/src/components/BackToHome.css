@@ -1,0 +1,14 @@
+.back-to-home-container {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  background: var(--light-gray);
+}
+
+.back-to-home-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
